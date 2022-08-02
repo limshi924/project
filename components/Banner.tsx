@@ -90,10 +90,10 @@ const Banner = ({ slides, blur, menu }: BannerProps): JSX.Element => {
               <div className="flex flex-col">
                 <div className="flex items-center text-[26px] ml-[19rem] text-slate-800 ">
                   {/* {user.username} */}
-                  <p className="font-semibold">{user.username}</p>
+                  <p className="font-semibold">{user.username ? user.username : 'username'}</p>
                   <p className="ml-[22px] text-[16px]">
                     {/* livin de life one day at a time skyrim 4 lyfe */}
-                    {user.bio}
+                    {user.bio ? user.bio : 'livin delife one day at a time skyrim 4 lyfe'}
                   </p>
                 </div>
                 {/* <div className="text-[#6C757D] ml-[18.7rem] bg-[#f8f9fa] text-[16px]  mt-3 w-[96%] h-[75px] rounded-[8px] ">

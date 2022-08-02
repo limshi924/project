@@ -66,8 +66,11 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
   const [displaydropdowncoin, setDisplayDropdownCoin] = React.useState(false)
   const [displaydropdowncoinBid, setDisplayDropdownCoinBid] =
     React.useState(false)
+
   const [coinvalue, setCoinDropdown] = React.useState('OMNI')
   const [coinImage, setCoinImage] = React.useState(PngOmni)
+  const [coinvalue1, setCoinDropdown1] = React.useState('OMNI')
+  const [coinImage1, setCoinImage1] = React.useState(PngOmni)
 
   const dispatch = useDispatch()
   const user = useSelector(selectUser)
@@ -229,7 +232,6 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
   const onClickDownSpan = () => {
     setDisplayDropdownCoin(!displaydropdowncoin)
   }
-
   return (
     <>
       <div className="w-full flex flex-row min-h-[750px] bg-[#FEFEFF]">
@@ -685,7 +687,7 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
                       >
                         <Image
                           style={{ padding: '10px', width: '20px' }}
-                          src={coinImage}
+                          src={coinImage1}
                           alt=""
                         />
                         <p
@@ -699,7 +701,7 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
                             lineHeight: '20px',
                           }}
                         >
-                          {coinvalue}
+                          {coinvalue1}
                         </p>
                         <span
                           onClick={() => onClickDownSpanBid()}
@@ -723,16 +725,16 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
                         className={'dropdown-coin'}
                         style={{
                           marginTop: '-3px',
-                          opacity: '0.6',
+                          // opacity: '0.6',
                           position: 'absolute',
                           display: displaydropdowncoinBid ? 'block' : 'none',
                         }}
                       >
                         <div
                           onClick={() => {
-                            setCoinImage(PngOmni)
+                            setCoinImage1(PngOmni)
                             setDisplayDropdownCoinBid(false)
-                            setCoinDropdown('OMNI')
+                            setCoinDropdown1('OMNI')
                           }}
                           className={`flex text-center p-1 ${
                             expandedMenu == 2 ? 'active' : ''
@@ -768,9 +770,9 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
                         </div>
                         <div
                           onClick={() => {
-                            setCoinImage(PngEther)
+                            setCoinImage1(PngEther)
                             setDisplayDropdownCoinBid(false)
-                            setCoinDropdown('ETHER')
+                            setCoinDropdown1('ETHER')
                           }}
                           className={`flex text-center p-1 ${
                             expandedMenu == 2 ? 'active' : ''
@@ -780,6 +782,8 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
                             border: '1px solid #E9ECEF',
                             borderTop: 'none',
                             borderBottom: 'none',
+                            borderBottomRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
                             width: '180px',
                             alignItems: 'center',
                             cursor: 'pointer',
@@ -891,7 +895,7 @@ const UserEdit: React.FC<IUserEditProps> = ({ updateModal }) => {
                         className={'dropdown-coin'}
                         style={{
                           marginTop: '-3px',
-                          opacity: '0.6',
+                          // opacity: '0.6',
                           position: 'absolute',
                           display: displaydropdowncoin ? 'block' : 'none',
                         }}
